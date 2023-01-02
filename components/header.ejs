@@ -1,0 +1,34 @@
+<nav class="navbar">
+    <div class="logo-container">
+        <a><img class="logo" src="https://www.devmedia.com.br/Imagens/2013/logo_new.png"></a>
+    </div>
+    <div onclick="showMenu()" class="hamburguer-menu mobile-only">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu-mobile mobile-only">
+        <a href="">Cadastrar notícias</a>
+        <a href="">Exibir notícias</a>
+        <%- include('searchBar') %>
+        <div class="close-container">
+            <a onclick="closeMenu()">Fechar</a>
+        </div>
+    </div>
+    <div class="menu-container desktop-only">
+        <a href="/cadastrar">Cadastrar notícias</a>
+        <a href="/">Exibir notícias</a>
+        <%- include('searchBar') %>
+    </div>
+    
+</nav>
+
+<script>
+    const menuMobile = document.querySelector('.menu-mobile');
+    function showMenu(){
+        menuMobile.style.transform = 'translateX(0)';
+    }
+    function closeMenu(){
+        menuMobile.style.transform = 'translateX(100%)';
+    }
+</script>
